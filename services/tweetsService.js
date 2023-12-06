@@ -1,4 +1,4 @@
-const tweetsRepository = require('../repository/tweetsRepository.js');
+const tweetsRepository = require('../repository/tweetsRepository');
 
 module.exports = {
     getTweets, 

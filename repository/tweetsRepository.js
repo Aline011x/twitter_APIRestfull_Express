@@ -1,4 +1,4 @@
-const connect = require('../../mysql/lib/connect')
+const connect = require('../lib/connect')
 
 module.exports = {
     getTweets, 

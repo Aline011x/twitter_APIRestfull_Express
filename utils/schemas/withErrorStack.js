@@ -1,11 +1,11 @@
+const config = require('../../config')
 
-
-function withErrorStack(error, stack,  
+function withErrorStack(err, stack,  
     _isStackShown = config.dev) {
     if (_isStackShown) {
-        return {...error, stack}
+        return {...err, stack}
     }
-    return error; 
+    return err; 
 }
 
 

@@ -17,8 +17,8 @@ throw new Error(
     }
 
     return function validationMiddleware(req, res, next) {
-        const error = validate(req[payloadKey], joiSchema)
-        error ? next(boom.badRequest(error)) : next()
+        const err = validate(req[payloadKey], joiSchema)
+        err ? next(boom.badRequest(err)) : next()
     }
 
 }

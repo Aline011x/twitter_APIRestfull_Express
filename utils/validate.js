@@ -1,8 +1,8 @@
 const joi = require('@hapi/joi')
 
 function validate(data, schema){
-    const { error } = joi.object(schema).validate(data)
-    return error
+    const { err } = joi.object(schema).validate(data)
+    return err
 }
 
 module.exports = validate; 
