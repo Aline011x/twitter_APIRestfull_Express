@@ -1,3 +1,4 @@
+const debug  = require('debug')('app:repositories');
 const connect = require('../lib/connect')
 
 module.exports = {
@@ -15,8 +16,10 @@ async function getTweets() {
         connect.query(query, (err, result) => {
             if (err) {
                 reject(err);
+                debug(reject)
             }else {
                 resolve(result)
+                debug(result);
             }
         })
     })
@@ -29,8 +32,10 @@ async function createTweet(tweet) {
         connect.query(query, tweet,  (err, res) => {
             if (err) {
                 reject(err);
+                debug(reject)
             }else {
                 resolve({ tweetId: res.insertId, ...tweet})
+                debug(resolve)
             }
         })
     })
@@ -45,8 +50,10 @@ async function getTweet(tweetId) {
 
         if (err) {
                 reject(err);
+                // debug(reject)
             }else {
                 resolve(res[0])
+                debug(resolve)
             }
         })
     })
@@ -58,8 +65,10 @@ async function deleteTweet(tweetId) {
         connect.query(query, tweetId, (err, res) => {
             if (err) {
                 reject(err);
+                debug(reject)
             }else {
                 resolve(res.affectedRows)
+                debug(resolve)
             }
         })
     })
@@ -74,8 +83,10 @@ async function updateTweet(tweetId, content) {
 
             if (err) {
                 reject(err);
+                debug(reject)
             }else {
                 resolve(res.affectedRows)
+                debug(resolve)
             }
         })
     })

@@ -1,4 +1,4 @@
-const withErrorStack = require('./schemas/withErrorStack')
+const withErrorStack = require('./withErrorStack');
 
 describe("[ utils / withErrorStack ]", () => {
     it ("should return the error with stack", () => {
@@ -12,6 +12,7 @@ describe("[ utils / withErrorStack ]", () => {
 
         // Assert
         expect(result).toEqual(expected)
+
         })
     
     it ("should return the without stack", () => {

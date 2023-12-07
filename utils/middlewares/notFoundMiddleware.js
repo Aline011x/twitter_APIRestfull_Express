@@ -2,12 +2,9 @@ const boom = require('@hapi/boom')
 
 function notFoundMiddleware(req, res) {
 
-    const {
-        output: { statusCode, payload }, 
-    } = boom.notFound()
-
+    const {output: { statusCode, payload }, } = boom.notFound();
     
-    res.status(statusCode).json(payload)
+    res.status(statusCode).json(payload);
 
 }
 

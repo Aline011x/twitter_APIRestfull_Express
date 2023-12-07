@@ -1,6 +1,6 @@
 const config = require('../../config');
 const boom = require('@hapi/boom');
-const withErrorStack = require('../schemas/withErrorStack');
+const withErrorStack = require('../withErrorStack');
 
 
 function logError(err, req, res, next) {
